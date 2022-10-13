@@ -28,7 +28,7 @@ for i in range(len(sorted_lists)):
     elif i <= len(sorted_lists) * 0.3:
         if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
                 sorted_lists[i][2] = True
-        ws.cell(row = sorted_lists[i][0], column = 8).value = "A"
+        ws.cell(row = sorted_lists[i][0], column = 8).value = "A0"
 
     elif i <= len(sorted_lists) * 0.5:
         if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
@@ -38,7 +38,7 @@ for i in range(len(sorted_lists)):
     elif i <= len(sorted_lists) * 0.7:
         if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
                 sorted_lists[i][2] = True
-        ws.cell(row = sorted_lists[i][0], column = 8).value = "B"
+        ws.cell(row = sorted_lists[i][0], column = 8).value = "B0"
 
     elif i <= len(sorted_lists) * 0.85:
         if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
@@ -48,13 +48,13 @@ for i in range(len(sorted_lists)):
     elif i <= len(sorted_lists) * 1:
         if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
                 sorted_lists[i][2] = True
-        ws.cell(row = sorted_lists[i][0], column = 8).value = "C"
+        ws.cell(row = sorted_lists[i][0], column = 8).value = "C0"
 i += 1
 
 if sorted_lists[int(len(sorted_lists) * 0.15)][2] == True:
     for j in range(len(sorted_lists) * 0.15):
         if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.15)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "A"
+             ws.cell(row = sorted_lists[i][0], column = 8).value = "A0"
 
 if sorted_lists[int(len(sorted_lists) * 0.3)][2] == True:
     for j in range(len(sorted_lists) * 0.15, len(sorted_lists) * 0.3):
@@ -64,7 +64,7 @@ if sorted_lists[int(len(sorted_lists) * 0.3)][2] == True:
 if sorted_lists[int(len(sorted_lists) * 0.5)][2] == True:
     for j in range(len(sorted_lists) * 0.3,  len(sorted_lists) * 0.5):
         if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.5)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "B"
+             ws.cell(row = sorted_lists[i][0], column = 8).value = "B0"
 
 if sorted_lists[int(len(sorted_lists) * 0.7)][2] == True:
     for j in range(len(sorted_lists) * 0.5, len(sorted_lists) * 0.7):
@@ -74,6 +74,6 @@ if sorted_lists[int(len(sorted_lists) * 0.7)][2] == True:
 if sorted_lists[int(len(sorted_lists) * 0.85)][2] == True:
     for j in range(len(sorted_lists) * 0.7, len(sorted_lists) * 0.85):
         if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.85)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "C"                         
+             ws.cell(row = sorted_lists[i][0], column = 8).value = "C0"                         
 wb.save("student.xlsx")
 wb.close()
