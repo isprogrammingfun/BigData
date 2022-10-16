@@ -20,34 +20,22 @@ for row in ws:
 sorted_lists = sorted(grade_lists, key = lambda x:x[1], reverse = True)
 
 for i in range(len(sorted_lists)):
-    if i <= len(sorted_lists) * 0.15:
-            if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
-                sorted_lists[i][2] = True
+    if i < len(sorted_lists) * 0.15:
             ws.cell(row = sorted_lists[i][0], column = 8).value = 'A+'
 
-    elif i <= len(sorted_lists) * 0.3:
-        if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
-                sorted_lists[i][2] = True
+    elif i < len(sorted_lists) * 0.3:
         ws.cell(row = sorted_lists[i][0], column = 8).value = "A0"
 
-    elif i <= len(sorted_lists) * 0.5:
-        if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
-                sorted_lists[i][2] = True
+    elif i < len(sorted_lists) * 0.5:
         ws.cell(row = sorted_lists[i][0], column = 8).value = "B+"
     
-    elif i <= len(sorted_lists) * 0.7:
-        if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
-                sorted_lists[i][2] = True
+    elif i < len(sorted_lists) * 0.7:
         ws.cell(row = sorted_lists[i][0], column = 8).value = "B0"
 
-    elif i <= len(sorted_lists) * 0.85:
-        if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
-                sorted_lists[i][2] = True
+    elif i < len(sorted_lists) * 0.85:
         ws.cell(row = sorted_lists[i][0], column = 8).value = "C+"
 
     elif i <= len(sorted_lists) * 1:
-        if (sorted_lists[i-1][1] == sorted_lists[i][1]) and (sorted_lists[i+1][1] == sorted_lists[i][1]):
-                sorted_lists[i][2] = True
         ws.cell(row = sorted_lists[i][0], column = 8).value = "C0"
 i += 1
                               
