@@ -50,30 +50,6 @@ for i in range(len(sorted_lists)):
                 sorted_lists[i][2] = True
         ws.cell(row = sorted_lists[i][0], column = 8).value = "C0"
 i += 1
-
-if sorted_lists[int(len(sorted_lists) * 0.15)][2] == True:
-    for j in range(len(sorted_lists) * 0.15):
-        if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.15)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "A0"
-
-if sorted_lists[int(len(sorted_lists) * 0.3)][2] == True:
-    for j in range(len(sorted_lists) * 0.15, len(sorted_lists) * 0.3):
-        if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.3)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "B+"
-
-if sorted_lists[int(len(sorted_lists) * 0.5)][2] == True:
-    for j in range(len(sorted_lists) * 0.3,  len(sorted_lists) * 0.5):
-        if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.5)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "B0"
-
-if sorted_lists[int(len(sorted_lists) * 0.7)][2] == True:
-    for j in range(len(sorted_lists) * 0.5, len(sorted_lists) * 0.7):
-        if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.7)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "C+"   
-
-if sorted_lists[int(len(sorted_lists) * 0.85)][2] == True:
-    for j in range(len(sorted_lists) * 0.7, len(sorted_lists) * 0.85):
-        if(sorted_lists[i][1] == sorted_lists[int(len(sorted_lists) * 0.85)][1]):
-             ws.cell(row = sorted_lists[i][0], column = 8).value = "C0"                         
+                              
 wb.save("student.xlsx")
 wb.close()
