@@ -19,7 +19,7 @@ for row in ws:
 
 sorted_lists = sorted(grade_lists, key = lambda x:x[1], reverse = True)
 
-for i in range(len(sorted_lists)):
+for i in range(int(len(sorted_lists))):
     if i < int(len(sorted_lists) * 0.15):
             ws.cell(row = sorted_lists[i][0], column = 8).value = 'A+'
 
