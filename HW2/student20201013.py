@@ -20,24 +20,23 @@ for row in ws:
 sorted_lists = sorted(grade_lists, key = lambda x:x[1], reverse = True)
 
 for i in range(len(sorted_lists)):
-    if i < len(sorted_lists) * 0.15 - 1:
+    if i < int(len(sorted_lists) * 0.15):
             ws.cell(row = sorted_lists[i][0], column = 8).value = 'A+'
 
-    elif i < len(sorted_lists) * 0.3 - 1:
+    elif i < int(len(sorted_lists) * 0.3):
         ws.cell(row = sorted_lists[i][0], column = 8).value = "A0"
 
-    elif i < len(sorted_lists) * 0.5 - 1:
+    elif i < int(len(sorted_lists) * 0.5):
         ws.cell(row = sorted_lists[i][0], column = 8).value = "B+"
     
-    elif i < len(sorted_lists) * 0.7 - 1:
+    elif i < int(len(sorted_lists) * 0.7):
         ws.cell(row = sorted_lists[i][0], column = 8).value = "B0"
 
-    elif i < len(sorted_lists) * 0.85 - 1:
+    elif i < int(len(sorted_lists) * 0.85):
         ws.cell(row = sorted_lists[i][0], column = 8).value = "C+"
 
-    elif i <= len(sorted_lists) * 1:
+    else:
         ws.cell(row = sorted_lists[i][0], column = 8).value = "C0"
-i += 1
                               
 wb.save("student.xlsx")
 wb.close()
