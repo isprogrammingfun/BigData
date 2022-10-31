@@ -8,7 +8,6 @@ def get_day(date):
     return days[day]
 
 a = list()
-uber = dict()
 
 with open (sys.argv[1], "rt") as fp:
   for line in fp:
@@ -16,10 +15,10 @@ with open (sys.argv[1], "rt") as fp:
     arr = str_arr[1].split("/")
     key = str_arr[0] + "," + get_day(date(int(arr[2]), int(arr[0]), int(arr[1])))
     str_arr[3] = str_arr[3].replace("\n", "")
-    uber[key] = str(str_arr[2]) + "," + str(str_arr[3])
-    print(uber)
+    value = str(str_arr[2]) + "," + str(str_arr[3])
+    a.append(key + " " + value)
 
-
+print(a)
 with open (sys.argv[2], "wt") as fp:
-    for key, value in uber.items():
-        fp.write(f'{key} {value}\n')
+    for i in a:
+        fp.write(i + "\n")
