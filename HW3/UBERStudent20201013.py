@@ -3,7 +3,7 @@ import sys
 from datetime import datetime, date
 
 def get_day(date):
-    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
     day = date.weekday()
     return days[day]
 
