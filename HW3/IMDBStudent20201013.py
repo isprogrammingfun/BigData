@@ -6,21 +6,24 @@ print(sys.argv[2])
 with open (sys.argv[2], "rt") as fp:
   for line in fp:
     str_arr = line.split("::")
-    if str_arr[4].find("|") is True:
-      arr = str_arr[4].split("|")
+    if "|" in str_arr[2]:
+      arr = str_arr[2].split("|")
       for i in arr:
+        if "\n" in i:
+          i = i.replace("\n", "")
           if i not in cate:
             cate[i] = 1
           else:
-            cate[i] += 1  
-    else:  
-      if str_arr[4] not in cate:
-        cate[str_arr[4]] = 1
-      else:
-        cate[str_arr[4]] += 1
+            cate[i] += 1
+    else:
+      if "\n" in str_arr[2]:
+        str_arr[2] = str_arr[2].replace("\n", "")
+        if str_arr[2] not in cate:
+          cate[str_arr[2]] = 1
+        else:
+          cate[str_arr[2]] += 1
 
 
 with open (sys.argv[3], "wt") as fp:
   for key, value in cate.items():
-    print(key,value)
-    fp.write(key, value)
+    fp.write(f'{key } {value}\n')
