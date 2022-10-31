@@ -2,8 +2,8 @@
 import sys
 
 cate = dict()
-print(sys.argv[2])
-with open (sys.argv[2], "rt") as fp:
+
+with open (sys.argv[1], "rt") as fp:
   for line in fp:
     str_arr = line.split("::")
     if "|" in str_arr[2]:
@@ -24,6 +24,6 @@ with open (sys.argv[2], "rt") as fp:
           cate[str_arr[2]] += 1
 
 
-with open (sys.argv[3], "wt") as fp:
+with open (sys.argv[2], "wt") as fp:
   for key, value in cate.items():
     fp.write(f'{key } {value}\n')
