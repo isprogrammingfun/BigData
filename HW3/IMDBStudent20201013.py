@@ -11,10 +11,10 @@ with open (sys.argv[1], "rt") as fp:
       for i in arr:
         if "\n" in i:
           i = i.replace("\n", "")
-          if i not in cate:
-            cate[i] = 1
-          else:
-            cate[i] += 1
+        if i not in cate:
+          cate[i] = 1
+        else:
+          cate[i] += 1
     else:
       if "\n" in str_arr[2]:
         str_arr[2] = str_arr[2].replace("\n", "")
