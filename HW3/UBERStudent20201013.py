@@ -17,8 +17,7 @@ with open (sys.argv[1], "rt") as fp:
     str_arr[3] = str_arr[3].replace("\n", "")
     value = str(str_arr[2]) + "," + str(str_arr[3])
     a.append(key + " " + value)
-
-print(a)
+      
 with open (sys.argv[2], "wt") as fp:
     for i in a:
         fp.write(i + "\n")
