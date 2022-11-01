@@ -7,17 +7,23 @@ def get_day(date):
     day = date.weekday()
     return days[day]
 
-a = list()
-
+uber = dict()
 with open (sys.argv[1], "rt") as fp:
-  for line in fp:
-    str_arr = line.split(",")
-    arr = str_arr[1].split("/")
-    key = str_arr[0] + "," + get_day(date(int(arr[2]), int(arr[0]), int(arr[1])))
-    str_arr[3] = str_arr[3].replace("\n", "")
-    value = str(str_arr[2]) + "," + str(str_arr[3])
-    a.append(key + " " + value)
-      
+	for line in fp:
+		str_arr = line.split(",")
+		region = str_arr[0]
+		arr = str_arr[1].split("/")
+		key = region + "," + get_day(date(int(arr[2]), int(arr[0]), int(arr[1])))
+		vehicle = int(str_arr[2])
+		trip = int(str_arr[3].replace("\n", ""))
+
+		if key in uber:
+			value = uber[key].split(",")
+			vehicle += int(value[0])
+			trip += int(value[1])
+		uber[key] = str(vehicle) + "," + str(trip)
+
+
 with open (sys.argv[2], "wt") as fp:
-    for i in a:
-        fp.write(i + "\n")
+  for key, value in uber.items():
+    fp.write(f'{key } {value}\n')
