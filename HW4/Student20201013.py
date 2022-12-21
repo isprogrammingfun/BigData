@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 import sys
 import numpy as np
-from os import listdir
 import operator
+from os import listdir
 
 test = sys.argv[2]
 training = sys.argv[1]
-trainingData = listdir(training)
 testData = listdir(test)
+trainingData = listdir(training)
+
 
 def autoNorm(dataSet):
     minVals = dataSet.min(0)
@@ -65,9 +66,9 @@ for k in range(1, 21):
   fail = 0
 
   for i in range(len(testData)):
-    testData = readFile(test + '/' + testData[i])
+    testDatas = readFile(test + '/' + testData[i])
     answer = int(testData[i].split('_')[0])
-    expect = classify0(testData, group, labels, k)
+    expect = classify0(testDatas, group, labels, k)
 
     if answer != expect:
       fail += 1
